@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh UI — Component Library</title>
+<link rel="stylesheet" href="fresh-ui.css">
+<style>
+.demo-sec{margin:44px 0}.demo-sec>h2{margin-bottom:4px}.demo-sec>.desc{color:var(--muted);margin-bottom:18px}
+.show{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;margin:14px 0}
+.show .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.hero-demo{background:linear-gradient(135deg,#4f46e5,#8b5cf6);color:#fff;border-radius:20px;padding:56px 40px;margin:32px 0}
+.hero-demo h1{font-size:2.2em;letter-spacing:-.02em;margin-bottom:10px}
+.hero-demo p{opacity:.85;max-width:560px}
+.hero-demo code{background:rgba(255,255,255,.15);color:#fff}
+pre.usage{background:#f6f7fb;color:#1a2333;border:1px solid var(--line)}
+pre.usage code{color:#1a2333}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span>✨</span> Fresh UI</div>
+  <nav><a href="#" class="active">Komponen</a><a href="#buttons">Tombol</a><a href="#forms">Form</a><a href="#nav">Navigasi</a></nav>
+  <span class="badge badge-primary">v1.0</span>
+</div>
+
+<div class="wrap">
+  <div class="hero-demo">
+    <h1>Fresh UI Kit</h1>
+    <p>Library komponen siap pakai — pure CSS tanpa framework. Copy <code>fresh-ui.css</code> (+ <code>fresh-ui.js</code> untuk modal/dropdown) ke project apapun.</p>
+  </div>
+
+  <div class="demo-sec" id="buttons">
+    <h2>Buttons</h2><p class="desc">Class: <code>.btn</code> + varian.</p>
+    <div class="show"><div class="row">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-success">Success</button>
+      <button class="btn btn-warning">Warning</button>
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-ghost">Ghost</button>
+      <button class="btn btn-outline">Outline</button>
+    </div><div class="row">
+      <button class="btn btn-primary btn-sm">Kecil</button>
+      <button class="btn btn-primary">Normal</button>
+      <button class="btn btn-primary btn-lg">Besar</button>
+      <button class="btn btn-primary" disabled>Disabled</button>
+    </div><div class="row">
+      <div class="btn-group">
+        <button class="btn btn-secondary">Kiri</button>
+        <button class="btn btn-secondary">Tengah</button>
+        <button class="btn btn-secondary">Kanan</button>
+      </div>
+    </div></div>
+    <pre class="usage"><code>&lt;button class="btn btn-primary"&gt;Simpan&lt;/button&gt;
+&lt;button class="btn btn-danger btn-sm"&gt;Hapus&lt;/button&gt;</code></pre>
+  </div>
+
+  <div class="demo-sec">
+    <h2>Cards &amp; Stats</h2>
+    <div class="grid c3">
+      <div class="stat-card"><div class="lbl">Total User</div><div class="val">1.248</div><div class="delta up">▲ 12% bulan ini</div></div>
+      <div class="stat-card"><div class="lbl">Online</div><div class="val">312</div><div class="delta up">▲ 5% hari ini</div></div>
+      <div class="stat-card"><div class="lbl">Expired</div><div class="val">37</div><div class="delta down">▼ perlu hapus</div></div>
+    </div>
+    <div class="show mt"><div class="card" style="max-width:420px">
+      <div class="card-head">Judul Kartu <span class="badge badge-primary">Baru</span></div>
+      Isi kartu. Bisa teks, form, atau apapun.
+      <div class="card-foot">Footer kartu — aksi tambahan di sini.</div>
+    </div></div>
+  </div>
+
+  <div class="demo-sec">
+    <h2>Badges &amp; Alerts</h2>
+    <div class="show"><div class="row">
+      <span class="badge badge-primary">Primary</span><span class="badge badge-success">Aktif</span>
+      <span class="badge badge-warning">Pending</span><span class="badge badge-danger">Expired</span>
+      <span class="badge badge-info">Info</span><span class="badge badge-gray">Arsip</span>
+    </div><div class="row">
+      <span class="small"><span class="dot dot-ok"></span>Online</span>
+      <span class="small"><span class="dot dot-warn"></span>Idle</span>
+      <span class="small"><span class="dot dot-bad"></span>Offline</span>
+    </div></div>
+    <div class="alert alert-info"><span class="ic">ℹ️</span><div>Info: pesan informasi biasa.</div></div>
+    <div class="alert alert-success"><span class="ic">✅</span><div>Berhasil: user <b>budi</b> dibuat.</div></div>
+    <div class="alert alert-warning"><span class="ic">⚠️</span><div>Peringatan: kuota hampir habis.</div></div>
+    <div class="alert alert-danger"><span class="ic">⛔</span><div>Error: token tidak valid.</div></div>
+  </div>
+
+  <div class="demo-sec">
+    <h2>Tables</h2>
+    <div class="tbl-wrap"><table class="tbl tbl-hover">
+      <tr><th>Username</th><th>Paket</th><th>Expired</th><th class="c">Status</th><th class="r">Aksi</th></tr>
+      <tr><td><b>budi</b></td><td>VLESS · 30 hari</td><td>17 Nov 2026</td><td class="c"><span class="badge badge-success">Aktif</span></td><td class="r"><button class="btn btn-secondary btn-sm">Detail</button> <button class="btn btn-danger btn-sm">Hapus</button></td></tr>
+      <tr><td><b>ani</b></td><td>VMess · Trial</td><td>18 Okt 2026</td><td class="c"><span class="badge badge-warning">Trial</span></td><td class="r"><button class="btn btn-secondary btn-sm">Detail</button> <button class="btn btn-danger btn-sm">Hapus</button></td></tr>
+      <tr><td><b>coba</b></td><td>Trojan · 7 hari</td><td>10 Okt 2026</td><td class="c"><span class="badge badge-danger">Expired</span></td><td class="r"><button class="btn btn-secondary btn-sm">Detail</button> <button class="btn btn-danger btn-sm">Hapus</button></td></tr>
+    </table></div>
+  </div>
+
+  <div class="demo-sec" id="forms">
+    <h2>Forms</h2>
+    <div class="show"><div class="grid c2">
+      <div class="field"><label>Username</label><input class="input" placeholder="cth: budi"></div>
+      <div class="field"><label>Protokol</label><select class="input"><option>Semua</option><option>VMess</option><option>VLESS</option><option>Trojan</option></select></div>
+    </div>
+    <div class="field"><label>Catatan</label><textarea class="input" placeholder="Opsional..."></textarea><div class="hint">Maksimal 200 karakter.</div></div>
+    <div class="field"><label>Kuota (GB)</label><div class="input-group"><input class="input" type="number" value="10"><span class="addon">GB</span></div></div>
+    <div class="field"><label class="check"><input type="checkbox" checked> Aktifkan notifikasi Telegram</label><label class="check"><input type="checkbox"> IP limit</label></div>
+    <div class="field"><label class="radio"><input type="radio" name="r" checked> Bulanan</label><label class="radio"><input type="radio" name="r"> Sekali bayar</label></div>
+    <div class="field"><label class="toggle"><input type="checkbox" checked><span class="tk"></span> Auto-renew</label></div>
+    <div class="field"><label>Dengan error</label><input class="input input-err" value="salah!"><div class="err-msg">Username sudah dipakai.</div></div>
+    <button class="btn btn-primary">Simpan</button> <button class="btn btn-secondary">Batal</button></div>
+  </div>
+
+  <div class="demo-sec" id="nav">
+    <h2>Navigasi</h2>
+    <p class="desc">Breadcrumb, tabs, pagination, dropdown.</p>
+    <div class="show">
+      <div class="crumbs"><a href="#">Home</a><span class="sep">›</span><a href="#">User</a><span class="sep">›</span><b>budi</b></div>
+      <div data-tabs>
+        <div class="tabs"><a href="#" data-tab="a" class="active">Ringkasan</a><a href="#" data-tab="b">Link</a><a href="#" data-tab="c">Traffic</a></div>
+        <div data-tab-panel="a">Panel ringkasan user.</div>
+        <div data-tab-panel="b" style="display:none">Panel daftar link.</div>
+        <div data-tab-panel="c" style="display:none">Panel grafik traffic.</div>
+      </div>
+      <div class="pager"><a href="#">‹</a><a href="#" class="cur">1</a><a href="#">2</a><a href="#">3</a><span>…</span><a href="#">12</a><a href="#">›</a></div>
+      <div class="row"><div class="dd">
+        <button class="btn btn-secondary" data-dd-toggle>Menu ▾</button>
+        <div class="dd-menu"><a href="#">Edit</a><a href="#">Duplikat</a><div class="div"></div><a href="#" style="color:var(--danger)">Hapus</a></div>
+      </div>
+      <button class="btn btn-primary" tip="Tooltip CSS murni!">Hover saya</button></div>
+    </div>
+  </div>
+
+  <div class="demo-sec">
+    <h2>Modal &amp; Progress</h2>
+    <div class="show"><div class="row">
+      <button class="btn btn-primary" data-modal-target="#demoModal">Buka Modal</button>
+    </div>
+    <div class="field"><label>Upload 75%</label><div class="prog"><i style="width:75%"></i></div></div>
+    <div class="field"><label>Kuota 90%</label><div class="prog warn"><i style="width:90%"></i></div></div>
+    <div class="field"><label>Error</label><div class="prog bad"><i style="width:40%"></i></div></div>
+    <div class="row"><div class="avatar">BD</div><div class="avatar sm">AN</div><div class="avatar lg">CB</div></div>
+    </div>
+  </div>
+
+  <div class="demo-sec">
+    <h2>Method Pills &amp; Code</h2>
+    <div class="show"><div class="row">
+      <span class="m get">GET</span><span class="m post">POST</span><span class="m put">PUT</span><span class="m del">DEL</span>
+      <code>/api/users</code> <kbd>Ctrl</kbd> + <kbd>K</kbd>
+    </div>
+    <pre>curl -H "Authorization: Bearer TOKEN" https://domain/api/users</pre></div>
+  </div>
+
+  <div class="demo-sec">
+    <h2>Empty State</h2>
+    <div class="show"><div class="empty"><div class="ic">📭</div><h3>Belum ada user</h3><p>Klik tombol di bawah untuk bikin akun pertama.</p><p class="mt"><button class="btn btn-primary">+ Buat User</button></p></div></div>
+  </div>
+
+  <footer style="margin:60px 0 40px;text-align:center;color:var(--muted)" class="small">
+    Fresh UI v1.0 — pure CSS · tanpa framework · MIT
+  </footer>
+</div>
+
+<div class="modal-ov" id="demoModal">
+  <div class="modal">
+    <div class="modal-head">Hapus user? <button class="modal-x">×</button></div>
+    <div class="modal-body">User <b>budi</b> akan dihapus dari semua inbound dan tidak bisa dikembalikan.</div>
+    <div class="modal-foot"><button class="btn btn-secondary modal-x">Batal</button><button class="btn btn-danger">Ya, hapus</button></div>
+  </div>
+</div>
+
+<script src="fresh-ui.js"></script>
+</body>
+</html>
