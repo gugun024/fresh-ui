@@ -11,7 +11,13 @@ Copy 2 file ke project lo:
 <script src="fresh-ui.js"></script>  <!-- opsional, untuk modal/dropdown/tabs -->
 ```
 
-Tanpa build step, tanpa dependensi, tanpa npm. Buka `index.html` untuk lihat semua komponen live.
+Tanpa build step, tanpa dependensi, tanpa npm. Buka halaman demo untuk lihat live:
+
+| Halaman | Isi |
+|---|---|
+| `index.html` | demo semua komponen dasar |
+| `landing-demo.html` | contoh landing page utuh (navbar → hero → fitur → harga → testimoni → FAQ → CTA → footer) |
+| `admin-demo.html` | contoh dashboard admin utuh (sidebar → topbar → statistik → tabel → form) |
 
 ## Daftar Komponen
 
@@ -44,6 +50,35 @@ Tanpa build step, tanpa dependensi, tanpa npm. Buka `index.html` untuk lihat sem
 | Tooltip | `[tip]` | `<button tip="Halo!">Hover</button>` (CSS murni) |
 | Empty state | `.empty` + `.ic` | tampilan data kosong |
 | Layout | `.wrap` `.grid.c2/c3/c4` `.row-between` `.mt` `.mb` | grid responsif |
+
+### Komponen Landing Page
+
+| Komponen | Class | Keterangan |
+|---|---|---|
+| Navbar publik | `.nav-public` `.nav-brand` `.logo-mark` `.nav-links` | sticky, blur, + tombol CTA |
+| Hero | `.hero` `.hero-kicker` `.hero-cta` `.hero-note` | varian centered |
+| Hero split | `.hero-split` `.hero-visual` | teks kiri + visual kanan |
+| Logo strip | `.logo-strip` `.logo-row` `.lg` | social proof |
+| Section | `.sec` `.sec-head` `.sec-kicker` | heading section terpusat |
+| Feature grid | `.feature-card` `.feature-ic` | pakai `.grid.c3` |
+| Steps | `.steps` `.step` `.step-num` | cara kerja 3 langkah |
+| Pricing | `.pricing` `.price-card` `.price-featured` `.price-tag` `.price-feats` `.tprice` | 3 tier, highlight tengah |
+| Testimoni | `.testi-card` `.testi-who` `.stars` | kartu ulasan |
+| FAQ | `.faq` + `<details><summary>` | accordion tanpa JS |
+| CTA banner | `.cta-banner` | gradient indigo→violet |
+| Footer | `.footer` `.footer-grid` `.footer-col` `.footer-bottom` `.soc` | multi-kolom + sosmed |
+
+### Layout Admin
+
+| Komponen | Class | Keterangan |
+|---|---|---|
+| Layout | `.admin-layout` | flex: sidebar + konten |
+| Sidebar | `.sidebar` `.side-logo` `.side-nav` `.side-label` `.side-link(.active)` `.side-foot` | fixed kiri, menu + badge `.cnt` |
+| Konten | `.admin-main` `.admin-content` | area konten utama |
+| Topbar admin | `.admin-topbar` `.page-title` `.search` `.spacer` | sticky |
+| Drawer mobile | `.side-toggle` `[data-sidebar-toggle]` `.side-ov` | sidebar jadi drawer < 900px |
+
+Lihat contoh jadi: `landing-demo.html` (halaman SaaS utuh) dan `admin-demo.html` (dashboard toko utuh).
 
 ### Interaksi JS (fresh-ui.js)
 
@@ -86,9 +121,11 @@ Contoh ganti tema jadi hijau:
 
 ```
 ui-kit/
-├── fresh-ui.css   # semua style (~13 KB)
-├── fresh-ui.js    # interaksi modal/dropdown/tabs (~1.7 KB)
-├── index.html     # demo semua komponen
+├── fresh-ui.css     # semua style: komponen + landing + admin (~20 KB)
+├── fresh-ui.js      # interaksi: modal/dropdown/tabs/sidebar (~2 KB)
+├── index.html       # demo komponen dasar
+├── landing-demo.html # contoh landing page utuh
+├── admin-demo.html  # contoh dashboard admin utuh
 └── README.md
 ```
 

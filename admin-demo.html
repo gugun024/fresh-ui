@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arunika Admin — Dashboard</title>
+<link rel="stylesheet" href="fresh-ui.css">
+</head>
+<body>
+
+<div class="admin-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="side-logo"><span class="logo-mark">☀️</span> Arunika</div>
+    <nav class="side-nav">
+      <div class="side-label">Menu Utama</div>
+      <a href="#" class="side-link active"><span class="ic">📊</span> Dashboard</a>
+      <a href="#" class="side-link"><span class="ic">👥</span> Pelanggan</a>
+      <a href="#" class="side-link"><span class="ic">📦</span> Produk <span class="cnt">24</span></a>
+      <a href="#" class="side-link"><span class="ic">🧾</span> Pesanan <span class="cnt">8</span></a>
+      <div class="side-label">Laporan</div>
+      <a href="#" class="side-link"><span class="ic">📈</span> Penjualan</a>
+      <a href="#" class="side-link"><span class="ic">💰</span> Keuangan</a>
+      <div class="side-label">Lainnya</div>
+      <a href="#" class="side-link"><span class="ic">⚙️</span> Pengaturan</a>
+      <a href="#" class="side-link"><span class="ic">❓</span> Bantuan</a>
+    </nav>
+    <div class="side-foot"><div class="avatar sm">AD</div><div><b>Admin</b><br>admin@arunika.id</div></div>
+  </aside>
+  <div class="side-ov"></div>
+
+  <!-- MAIN -->
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <button class="side-toggle" data-sidebar-toggle>☰</button>
+      <div class="page-title">Dashboard</div>
+      <div class="spacer"></div>
+      <input class="input search" placeholder="🔍 Cari pesanan, pelanggan…">
+      <button class="btn btn-primary btn-sm" data-modal-target="#modalProduk">+ Produk</button>
+      <div class="avatar" tip="Admin">AD</div>
+    </div>
+
+    <div class="admin-content">
+      <div class="alert alert-info"><span class="ic">ℹ️</span><div><b>8 pesanan</b> menunggu diproses hari ini. <a href="#">Lihat sekarang →</a></div></div>
+
+      <!-- STATS -->
+      <div class="grid c4 mt">
+        <div class="stat-card"><div class="lbl">Pendapatan</div><div class="val">Rp12,4<small style="font-size:.5em">jt</small></div><div class="delta up">▲ 18% minggu ini</div></div>
+        <div class="stat-card"><div class="lbl">Pesanan</div><div class="val">186</div><div class="delta up">▲ 9% minggu ini</div></div>
+        <div class="stat-card"><div class="lbl">Pelanggan</div><div class="val">1.042</div><div class="delta up">▲ 32 baru</div></div>
+        <div class="stat-card"><div class="lbl">Retur</div><div class="val">3</div><div class="delta down">▼ 1 dibanding kemarin</div></div>
+      </div>
+
+      <!-- TABLE + FORM -->
+      <div class="grid c2 mt" style="grid-template-columns:1.6fr 1fr">
+        <div class="card">
+          <div class="card-head">Pesanan Terbaru <a href="#" class="small">Lihat semua →</a></div>
+          <div class="tbl-wrap" style="border:none">
+          <table class="tbl tbl-hover">
+            <tr><th>ID</th><th>Pelanggan</th><th>Total</th><th class="c">Status</th></tr>
+            <tr><td><code>#INV-2041</code></td><td>Siti Rahma</td><td>Rp385rb</td><td class="c"><span class="badge badge-warning">Diproses</span></td></tr>
+            <tr><td><code>#INV-2040</code></td><td>Andi Wijaya</td><td>Rp1,2jt</td><td class="c"><span class="badge badge-info">Dikirim</span></td></tr>
+            <tr><td><code>#INV-2039</code></td><td>Dewi Lestari</td><td>Rp750rb</td><td class="c"><span class="badge badge-success">Selesai</span></td></tr>
+            <tr><td><code>#INV-2038</code></td><td>Budi Santoso</td><td>Rp210rb</td><td class="c"><span class="badge badge-success">Selesai</span></td></tr>
+            <tr><td><code>#INV-2037</code></td><td>Ayu Nabila</td><td>Rp540rb</td><td class="c"><span class="badge badge-danger">Batal</span></td></tr>
+          </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head">Tambah Produk Cepat</div>
+          <div class="field"><label>Nama produk</label><input class="input" placeholder="cth: Kopi Arabika 200g"></div>
+          <div class="field"><label>Harga</label><div class="input-group"><span class="addon">Rp</span><input class="input" type="number" placeholder="0"></div></div>
+          <div class="field"><label>Kategori</label><select class="input"><option>Minuman</option><option>Makanan</option><option>Aksesoris</option></select></div>
+          <div class="field"><label class="toggle"><input type="checkbox" checked><span class="tk"></span> Tampilkan di katalog</label></div>
+          <button class="btn btn-primary btn-block">Simpan Produk</button>
+        </div>
+      </div>
+
+      <div class="card mt">
+        <div class="card-head">Stok Menipis</div>
+        <div class="field"><label>Kopi Robusta 500g — sisa 4 <span class="muted small">(min. 10)</span></label><div class="prog warn"><i style="width:28%"></i></div></div>
+        <div class="field"><label>Teh Melati 100g — sisa 2 <span class="muted small">(min. 10)</span></label><div class="prog bad"><i style="width:12%"></i></div></div>
+        <div class="field" style="margin-bottom:0"><label>Gula Aren 1kg — sisa 45</label><div class="prog ok"><i style="width:82%"></i></div></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-ov" id="modalProduk">
+  <div class="modal">
+    <div class="modal-head">Tambah Produk <button class="modal-x">×</button></div>
+    <div class="modal-body">
+      <div class="field"><label>Nama produk</label><input class="input" placeholder="cth: Kopi Arabika 200g"></div>
+      <div class="grid c2">
+        <div class="field"><label>Harga (Rp)</label><input class="input" type="number"></div>
+        <div class="field"><label>Stok awal</label><input class="input" type="number" value="0"></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-secondary modal-x">Batal</button><button class="btn btn-primary">Simpan</button></div>
+  </div>
+</div>
+
+<script src="fresh-ui.js"></script>
+</body>
+</html>

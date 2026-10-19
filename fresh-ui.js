@@ -21,7 +21,29 @@
     if (dd && e.target.closest('[data-dd-toggle]')) dd.classList.toggle('open');
   });
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') document.querySelectorAll('.modal-ov.open').forEach(function(m){ m.classList.remove('open'); });
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-ov.open').forEach(function(m){ m.classList.remove('open'); });
+      var sb = document.querySelector('.sidebar.open');
+      var ov = document.querySelector('.side-ov.show');
+      if (sb) sb.classList.remove('open');
+      if (ov) ov.classList.remove('show');
+    }
+  });
+  // Admin sidebar drawer (mobile): [data-sidebar-toggle] membuka,
+  // .side-ov / Esc menutup
+  document.addEventListener('click', function(e){
+    if (e.target.closest('[data-sidebar-toggle]')) {
+      var sb = document.querySelector('.sidebar');
+      var ov = document.querySelector('.side-ov');
+      if (sb) sb.classList.add('open');
+      if (ov) ov.classList.add('show');
+      return;
+    }
+    if (e.target.classList && e.target.classList.contains('side-ov')) {
+      var sb2 = document.querySelector('.sidebar');
+      if (sb2) sb2.classList.remove('open');
+      e.target.classList.remove('show');
+    }
   });
   // Tabs sederhana: [data-tab] + [data-tab-panel="id"]
   document.querySelectorAll('[data-tab]').forEach(function(tab){
