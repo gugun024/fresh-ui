@@ -1,0 +1,43 @@
+/* ============================================================
+   Fresh UI · tokens.css
+   Design tokens: warna, radius, shadow, font.
+   File ini TIDAK berisi style komponen — hanya variabel.
+   ------------------------------------------------------------
+   Daftar isi:
+     1. Brand Colors
+     2. Semantic Colors
+     3. Surface & Text Colors
+     4. Radius
+     5. Shadows
+     6. Fonts
+   ============================================================ */
+
+/* ===== 1. Brand Colors ===== */
+:root{
+  --pri:#4f46e5; --pri-dark:#4338ca; --pri-soft:#eef0ff;
+  --vio:#8b5cf6;
+
+/* ===== 2. Semantic Colors ===== */
+  --ok:#059669; --ok-soft:#e6f9f0;
+  --warn:#d97706; --warn-soft:#fef4e2;
+  --danger:#dc2626; --danger-soft:#fdecec;
+  --info:#0284c7; --info-soft:#e6f4fd;
+
+/* ===== 3. Surface & Text Colors ===== */
+  --bg:#ffffff; --bg-soft:#f6f7fb; --card:#ffffff;
+  --line:#e6e9f2; --line-dark:#d5dae8;
+  --txt:#1a2333; --muted:#64748b; --faint:#94a3b8;
+  --code-bg:#1e1b2e; --code-txt:#d5ccff;
+
+/* ===== 4. Radius ===== */
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-full:999px;
+
+/* ===== 5. Shadows ===== */
+  --sh-sm:0 1px 3px rgba(20,30,60,.08);
+  --sh-md:0 6px 24px rgba(20,30,60,.1);
+  --sh-lg:0 12px 40px rgba(20,30,60,.14);
+
+/* ===== 6. Fonts ===== */
+  --font:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono','Cascadia Code',Consolas,monospace;
+}

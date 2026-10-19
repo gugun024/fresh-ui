@@ -1,0 +1,19 @@
+/* ============================================================
+   Fresh UI v1.1 — reusable component library (pure CSS)
+   Light theme · indigo/violet accent
+   ------------------------------------------------------------
+   ENTRY POINT: cukup link file ini saja.
+     <link rel="stylesheet" href="css/fresh-ui.css">
+   ------------------------------------------------------------
+   Modul (urutan penting — jangan diubah):
+     1. tokens.css      → design tokens (variabel)
+     2. base.css        → reset, base, layout helpers
+     3. components.css  → komponen UI dasar
+     4. landing.css     → komponen landing page
+     5. admin.css       → layout dashboard admin
+   ============================================================ */
+@import "tokens.css";
+@import "base.css";
+@import "components.css";
+@import "landing.css";
+@import "admin.css";

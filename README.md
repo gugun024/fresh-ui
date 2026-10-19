@@ -7,11 +7,12 @@ Library komponen siap pakai — **pure CSS tanpa framework**. Light theme, aksen
 Copy 2 file ke project lo:
 
 ```html
-<link rel="stylesheet" href="fresh-ui.css">
+<link rel="stylesheet" href="css/fresh-ui.css">
 <script src="fresh-ui.js"></script>  <!-- opsional, untuk modal/dropdown/tabs -->
 ```
 
-Tanpa build step, tanpa dependensi, tanpa npm. Buka halaman demo untuk lihat live:
+Cukup link **satu file** `css/fresh-ui.css` — dia otomatis mengimpor
+semua modul di bawahnya. Tanpa build step, tanpa dependensi, tanpa npm. Buka halaman demo untuk lihat live:
 
 | Halaman | Isi |
 |---|---|
@@ -90,7 +91,7 @@ Lihat contoh jadi: `landing-demo.html` (halaman SaaS utuh) dan `admin-demo.html`
 
 ## Kustomisasi
 
-Semua warna & ukuran pakai **CSS variables** di `:root`. Timpa di stylesheet lo sendiri:
+Semua warna & ukuran pakai **CSS variables** di `:root` (lihat `css/tokens.css`). Timpa di stylesheet lo sendiri:
 
 ```css
 :root{
@@ -121,13 +122,30 @@ Contoh ganti tema jadi hijau:
 
 ```
 ui-kit/
-├── fresh-ui.css     # semua style: komponen + landing + admin (~20 KB)
-├── fresh-ui.js      # interaksi: modal/dropdown/tabs/sidebar (~2 KB)
-├── index.html       # demo komponen dasar
-├── landing-demo.html # contoh landing page utuh
-├── admin-demo.html  # contoh dashboard admin utuh
+├── css/
+│   ├── fresh-ui.css   # ENTRY POINT — cukup link file ini (hanya @import)
+│   ├── tokens.css     # design tokens: warna, radius, shadow, font (:root)
+│   ├── base.css       # reset, base typography, layout helpers (.wrap, .grid…)
+│   ├── components.css # komponen UI dasar (button → empty state)
+│   ├── landing.css    # komponen landing page (navbar → footer)
+│   └── admin.css      # layout dashboard admin (sidebar → drawer mobile)
+├── fresh-ui.js        # interaksi: modal/dropdown/tabs/sidebar (~2 KB)
+├── index.html         # demo komponen dasar
+├── landing-demo.html  # contoh landing page utuh
+├── admin-demo.html    # contoh dashboard admin utuh
 └── README.md
 ```
+
+Setiap file CSS diawali daftar isi (TOC) dan memakai format komentar
+section yang konsisten: `/* ===== 1. Buttons ===== */`.
+
+> Butuh sebagian saja? Link modul langsung, misal cuma butuh landing:
+> ```html
+> <link rel="stylesheet" href="css/tokens.css">
+> <link rel="stylesheet" href="css/base.css">
+> <link rel="stylesheet" href="css/landing.css">
+> ```
+> Urutan penting: `tokens.css` harus selalu pertama.
 
 ## Catatan
 
