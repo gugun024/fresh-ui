@@ -19,7 +19,14 @@
     13. Tooltip
     14. Dropdown
     15. Empty State
-    16. Responsive
+    16. Toast
+    17. Spinner
+    18. Skeleton
+    19. Info Box & Small Box
+    20. Timeline
+    21. Carousel
+    22. Ribbon
+    23. Responsive
    ============================================================ */
 
 /* ===== 1. Buttons ===== */
@@ -185,7 +192,91 @@ kbd{font-family:var(--mono);font-size:.82em;background:#eef1f6;border:1px solid 
 .empty .ic{font-size:3em;margin-bottom:12px}
 .empty h3{color:var(--txt);margin-bottom:6px}
 
-/* ===== 16. Responsive ===== */
+/* ===== 16. Toast ===== */
+.toast-wrap{position:fixed;bottom:24px;right:24px;z-index:200;display:flex;flex-direction:column;gap:10px;max-width:min(360px,calc(100vw - 48px))}
+.toast{display:flex;gap:12px;align-items:flex-start;background:#1a2333;color:#fff;padding:14px 18px;border-radius:var(--r-md);box-shadow:var(--sh-lg);font-size:.9em;animation:toastIn .25s ease-out;border-left:4px solid var(--pri)}
+.toast.out{animation:toastOut .2s ease-in forwards}
+@keyframes toastIn{from{transform:translateX(110%);opacity:0}to{transform:none;opacity:1}}
+@keyframes toastOut{to{transform:translateX(110%);opacity:0}}
+.toast .tic{font-size:1.2em;flex-shrink:0}
+.toast-success{border-left-color:var(--ok)}
+.toast-warning{border-left-color:var(--warn)}
+.toast-danger{border-left-color:var(--danger)}
+.toast-info{border-left-color:var(--info)}
+.toast-x{background:none;border:none;color:#94a3b8;font-size:1.15em;cursor:pointer;margin-left:auto;flex-shrink:0;line-height:1}
+.toast-x:hover{color:#fff}
+
+/* ===== 17. Spinner ===== */
+.spinner{width:36px;height:36px;border:4px solid var(--line);border-top-color:var(--pri);border-radius:50%;animation:spin .8s linear infinite;display:inline-block;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner.sm{width:22px;height:22px;border-width:3px}
+.spinner.lg{width:56px;height:56px;border-width:5px}
+.spinner-overlay{position:fixed;inset:0;background:rgba(255,255,255,.78);backdrop-filter:blur(2px);z-index:150;display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:var(--muted);font-size:.92em}
+.spinner-overlay.open{display:flex}
+
+/* ===== 18. Skeleton ===== */
+.skeleton{background:linear-gradient(90deg,#eef1f6 25%,#e2e8f2 37%,#eef1f6 63%);background-size:400% 100%;animation:shimmer 1.4s ease infinite;border-radius:var(--r-sm)}
+@keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
+.sk-text{height:14px;margin:8px 0}
+.sk-block{height:120px;border-radius:var(--r-md)}
+.sk-circle{width:48px;height:48px;border-radius:50%;flex-shrink:0}
+
+/* ===== 19. Info Box & Small Box ===== */
+.info-box{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;box-shadow:var(--sh-sm)}
+.info-box .ib-ic{width:56px;height:56px;border-radius:var(--r-md);display:inline-flex;align-items:center;justify-content:center;font-size:1.6em;flex-shrink:0;background:var(--pri-soft);color:var(--pri)}
+.info-box .ib-num{font-size:1.7em;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.info-box .ib-lbl{color:var(--muted);font-size:.86em}
+.ib-ic.ok{background:var(--ok-soft);color:var(--ok)}
+.ib-ic.warn{background:var(--warn-soft);color:var(--warn)}
+.ib-ic.bad{background:var(--danger-soft);color:var(--danger)}
+.ib-ic.info{background:var(--info-soft);color:var(--info)}
+.small-box{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:22px;color:#fff;background:linear-gradient(135deg,var(--pri),#7c6cf0);box-shadow:var(--sh-sm)}
+.small-box.ok{background:linear-gradient(135deg,var(--ok),#34d399)}
+.small-box.warn{background:linear-gradient(135deg,var(--warn),#fbbf24)}
+.small-box.bad{background:linear-gradient(135deg,var(--danger),#f87171)}
+.small-box.info{background:linear-gradient(135deg,var(--info),#38bdf8)}
+.small-box .sb-num{font-size:2.4em;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.small-box .sb-lbl{font-size:.92em;opacity:.92;margin:4px 0 14px}
+.small-box .sb-ic{position:absolute;right:14px;top:8px;font-size:4.2em;opacity:.18;pointer-events:none}
+.small-box .sb-more{display:flex;align-items:center;justify-content:center;gap:6px;margin:0 -22px -22px;padding:10px;background:rgba(0,0,0,.14);color:#fff;font-size:.85em;font-weight:600}
+.small-box .sb-more:hover{background:rgba(0,0,0,.22);text-decoration:none}
+
+/* ===== 20. Timeline ===== */
+.timeline{position:relative;padding-left:34px;margin:8px 0}
+.timeline::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:18px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-34px;top:2px;width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid var(--pri);flex-shrink:0}
+.tl-dot.ok{border-color:var(--ok)}
+.tl-dot.warn{border-color:var(--warn)}
+.tl-dot.bad{border-color:var(--danger)}
+.tl-date{font-size:.78em;color:var(--faint);font-weight:600;margin-bottom:2px}
+.tl-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:12px 16px;font-size:.9em;box-shadow:var(--sh-sm)}
+.tl-card b{display:block;margin-bottom:2px}
+
+/* ===== 21. Carousel ===== */
+.carousel{position:relative;overflow:hidden;border-radius:var(--r-lg);border:1px solid var(--line);background:#fff}
+.car-track{display:flex;transition:transform .35s ease}
+.car-slide{min-width:100%;padding:44px 32px;text-align:center}
+.car-slide .ic{font-size:2.6em;margin-bottom:10px}
+.car-slide h3{margin-bottom:6px}
+.car-slide p{color:var(--muted);font-size:.92em;max-width:420px;margin:0 auto}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:1px solid var(--line-dark);background:#fff;cursor:pointer;font-size:1.1em;color:var(--muted);box-shadow:var(--sh-sm);z-index:2}
+.car-btn:hover{color:var(--pri);border-color:var(--pri)}
+.car-prev{left:12px}
+.car-next{right:12px}
+.car-dots{display:flex;gap:8px;justify-content:center;padding:14px}
+.car-dots button{width:10px;height:10px;border-radius:50%;border:none;background:#cbd5e1;cursor:pointer;padding:0}
+.car-dots button.on{background:var(--pri)}
+
+/* ===== 22. Ribbon ===== */
+.has-ribbon{position:relative;overflow:hidden}
+.ribbon{position:absolute;top:16px;right:-36px;transform:rotate(45deg);background:var(--pri);color:#fff;font-size:.7em;font-weight:800;letter-spacing:.08em;padding:5px 40px;text-transform:uppercase;box-shadow:var(--sh-sm);z-index:2}
+.ribbon.ok{background:var(--ok)}
+.ribbon.warn{background:var(--warn)}
+.ribbon.bad{background:var(--danger)}
+
+/* ===== 23. Responsive ===== */
 @media(max-width:760px){
   .topbar nav{display:none}
 }

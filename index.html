@@ -155,6 +155,78 @@ pre.usage code{color:#1a2333}
   </div>
 
   <div class="demo-sec">
+    <h2>Toast</h2>
+    <p class="desc">Panggil via JS: <code>toast('Pesan', 'success')</code> — tipe: success, warning, danger, info.</p>
+    <div class="show"><div class="row">
+      <button class="btn btn-success" onclick="toast('Data berhasil disimpan', 'success')">Toast sukses</button>
+      <button class="btn btn-warning" onclick="toast('Stok hampir habis', 'warning')">Toast warning</button>
+      <button class="btn btn-danger" onclick="toast('Gagal menghapus data', 'danger')">Toast error</button>
+      <button class="btn btn-secondary" onclick="toast('Ini info biasa', 'info')">Toast info</button>
+    </div></div>
+    <pre class="usage"><code>toast('Data berhasil disimpan', 'success'); // hilang otomatis 4 detik</code></pre>
+  </div>
+
+  <div class="demo-sec">
+    <h2>Spinner &amp; Skeleton</h2>
+    <div class="show">
+      <div class="row"><span class="spinner sm"></span><span class="spinner"></span><span class="spinner lg"></span>
+        <button class="btn btn-secondary btn-sm" id="btnOverlay">Overlay loading 2 dtk</button></div>
+      <div class="grid c2 mt">
+        <div><div class="skeleton sk-text" style="width:60%"></div><div class="skeleton sk-text"></div><div class="skeleton sk-text" style="width:80%"></div></div>
+        <div style="display:flex;gap:14px;align-items:center"><div class="skeleton sk-circle"></div><div style="flex:1"><div class="skeleton sk-text" style="width:40%"></div><div class="skeleton sk-text" style="width:70%"></div></div></div>
+      </div>
+      <div class="skeleton sk-block mt"></div>
+    </div>
+    <pre class="usage"><code>&lt;span class="spinner"&gt;&lt;/span&gt; &lt;!-- sm / lg --&gt;
+&lt;div class="skeleton sk-text"&gt;&lt;/div&gt;</code></pre>
+  </div>
+
+  <div class="demo-sec">
+    <h2>Info Box &amp; Small Box</h2>
+    <p class="desc">Khas AdminLTE.</p>
+    <div class="grid c2">
+      <div class="info-box"><div class="ib-ic ok">🛒</div><div><div class="ib-num">1.248</div><div class="ib-lbl">Total Pesanan</div></div></div>
+      <div class="info-box"><div class="ib-ic warn">📦</div><div><div class="ib-num">37</div><div class="ib-lbl">Stok Menipis</div></div></div>
+    </div>
+    <div class="grid c4 mt">
+      <div class="small-box"><div class="sb-ic">🛒</div><div class="sb-num">1.248</div><div class="sb-lbl">Pesanan</div><a href="#" class="sb-more">Selengkapnya →</a></div>
+      <div class="small-box ok"><div class="sb-ic">💰</div><div class="sb-num">Rp12jt</div><div class="sb-lbl">Pendapatan</div><a href="#" class="sb-more">Selengkapnya →</a></div>
+      <div class="small-box warn"><div class="sb-ic">👥</div><div class="sb-num">1.042</div><div class="sb-lbl">Pelanggan</div><a href="#" class="sb-more">Selengkapnya →</a></div>
+      <div class="small-box bad"><div class="sb-ic">⚠️</div><div class="sb-num">37</div><div class="sb-lbl">Perlu Tindakan</div><a href="#" class="sb-more">Selengkapnya →</a></div>
+    </div>
+  </div>
+
+  <div class="demo-sec">
+    <h2>Timeline</h2>
+    <div class="show"><div class="timeline">
+      <div class="tl-item"><span class="tl-dot ok"></span><div class="tl-date">19 Okt 2026 · 09:42</div><div class="tl-card"><b>Pesanan #INV-2041 dibayar</b>Siti Rahma — Rp385.000 via transfer bank.</div></div>
+      <div class="tl-item"><span class="tl-dot warn"></span><div class="tl-date">18 Okt 2026 · 16:05</div><div class="tl-card"><b>Stok menipis</b>Kopi Robusta 500g tersisa 4 pcs.</div></div>
+      <div class="tl-item"><span class="tl-dot"></span><div class="tl-date">17 Okt 2026 · 11:20</div><div class="tl-card"><b>Produk baru ditambahkan</b>Teh Melati 100g masuk katalog.</div></div>
+    </div></div>
+  </div>
+
+  <div class="demo-sec">
+    <h2>Carousel &amp; Ribbon</h2>
+    <div class="show">
+      <div class="carousel" data-carousel>
+        <div class="car-track">
+          <div class="car-slide"><div class="ic">🚀</div><h3>Slide 1</h3><p>Konten slide pertama. Bisa teks, gambar, atau apapun.</p></div>
+          <div class="car-slide"><div class="ic">✨</div><h3>Slide 2</h3><p>Geser dengan tombol panah atau klik dots di bawah.</p></div>
+          <div class="car-slide"><div class="ic">🎉</div><h3>Slide 3</h3><p>Animasi transisi halus, tanpa library tambahan.</p></div>
+        </div>
+        <button class="car-btn car-prev" aria-label="Sebelumnya">‹</button>
+        <button class="car-btn car-next" aria-label="Berikutnya">›</button>
+        <div class="car-dots"><button aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button></div>
+      </div>
+      <div class="grid c3 mt">
+        <div class="card has-ribbon"><span class="ribbon">Baru</span><b>Paket Basic</b><p class="muted small">Dengan ribbon sudut.</p></div>
+        <div class="card has-ribbon"><span class="ribbon ok">Promo</span><b>Paket Pro</b><p class="muted small">Varian warna hijau.</p></div>
+        <div class="card has-ribbon"><span class="ribbon bad">Habis</span><b>Paket Lama</b><p class="muted small">Varian warna merah.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-sec">
     <h2>Empty State</h2>
     <div class="show"><div class="empty"><div class="ic">📭</div><h3>Belum ada user</h3><p>Klik tombol di bawah untuk bikin akun pertama.</p><p class="mt"><button class="btn btn-primary">+ Buat User</button></p></div></div>
   </div>
@@ -163,6 +235,8 @@ pre.usage code{color:#1a2333}
     Fresh UI v1.0 — pure CSS · tanpa framework · MIT
   </footer>
 </div>
+
+<div class="spinner-overlay" id="demoOverlay"><span class="spinner lg"></span>Memuat data…</div>
 
 <div class="modal-ov" id="demoModal">
   <div class="modal">
@@ -173,5 +247,13 @@ pre.usage code{color:#1a2333}
 </div>
 
 <script src="fresh-ui.js"></script>
+<script>
+// Demo overlay loading
+document.getElementById('btnOverlay').addEventListener('click', function(){
+  var ov = document.getElementById('demoOverlay');
+  ov.classList.add('open');
+  setTimeout(function(){ ov.classList.remove('open'); }, 2000);
+});
+</script>
 </body>
 </html>

@@ -8,7 +8,8 @@
      2. Sidebar
      3. Side Nav Links
      4. Main Area & Topbar
-     5. Responsive (drawer mobile)
+     5. Sidebar Treeview
+     6. Responsive (drawer mobile)
    ============================================================ */
 
 /* ===== 1. Admin Layout ===== */
@@ -40,7 +41,16 @@
 .side-toggle{display:none;background:#fff;border:1px solid var(--line-dark);border-radius:10px;width:42px;height:42px;font-size:1.2em;cursor:pointer;flex-shrink:0}
 .side-ov{display:none}
 
-/* ===== 5. Responsive (drawer mobile) ===== */
+/* ===== 5. Sidebar Treeview ===== */
+.side-tree .side-link{cursor:pointer}
+.side-tree .side-arrow{margin-left:auto;font-size:.72em;color:var(--faint);transition:transform .2s;flex-shrink:0}
+.side-tree.open .side-arrow{transform:rotate(90deg);color:var(--pri)}
+.side-sub{display:none;padding:4px 0 6px}
+.side-tree.open .side-sub{display:block}
+.side-sub .side-link{font-size:.87em;padding:8px 14px 8px 50px}
+.side-sub .side-link .ic{width:18px;font-size:1em}
+
+/* ===== 6. Responsive (drawer mobile) ===== */
 @media(max-width:900px){
   .sidebar{position:fixed;left:0;top:0;transform:translateX(-105%);transition:transform .25s ease;box-shadow:var(--sh-lg)}
   .sidebar.open{transform:none}

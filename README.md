@@ -50,6 +50,14 @@ semua modul di bawahnya. Tanpa build step, tanpa dependensi, tanpa npm. Buka hal
 | Avatar | `.avatar` `.sm` `.lg` | `<div class="avatar">BD</div>` (inisial) |
 | Tooltip | `[tip]` | `<button tip="Halo!">Hover</button>` (CSS murni) |
 | Empty state | `.empty` + `.ic` | tampilan data kosong |
+| Toast | `.toast-wrap` `.toast` `.toast-success/warning/danger/info` | via JS: `toast('Pesan', 'success')` |
+| Spinner | `.spinner` `.sm` `.lg` `.spinner-overlay(.open)` | `<span class="spinner"></span>` |
+| Skeleton | `.skeleton` `.sk-text` `.sk-block` `.sk-circle` | shimmer loading |
+| Info box | `.info-box` `.ib-ic(.ok/warn/bad/info)` `.ib-num` `.ib-lbl` | khas AdminLTE |
+| Small box | `.small-box(.ok/warn/bad/info)` `.sb-num` `.sb-lbl` `.sb-ic` `.sb-more` | khas AdminLTE |
+| Timeline | `.timeline` `.tl-item` `.tl-dot(.ok/warn/bad)` `.tl-date` `.tl-card` | vertikal |
+| Carousel | `.carousel[data-carousel]` `.car-track` `.car-slide` `.car-prev/next` `.car-dots` | otomatis via JS |
+| Ribbon | `.has-ribbon` + `.ribbon(.ok/warn/bad)` | sudut card |
 | Layout | `.wrap` `.grid.c2/c3/c4` `.row-between` `.mt` `.mb` | grid responsif |
 
 ### Komponen Landing Page
@@ -75,6 +83,7 @@ semua modul di bawahnya. Tanpa build step, tanpa dependensi, tanpa npm. Buka hal
 |---|---|---|
 | Layout | `.admin-layout` | flex: sidebar + konten |
 | Sidebar | `.sidebar` `.side-logo` `.side-nav` `.side-label` `.side-link(.active)` `.side-foot` | fixed kiri, menu + badge `.cnt` |
+| Treeview | `.side-tree(.open)` `.side-arrow` `.side-sub` | submenu expand/collapse (klik parent) |
 | Konten | `.admin-main` `.admin-content` | area konten utama |
 | Topbar admin | `.admin-topbar` `.page-title` `.search` `.spacer` | sticky |
 | Drawer mobile | `.side-toggle` `[data-sidebar-toggle]` `.side-ov` | sidebar jadi drawer < 900px |
@@ -88,6 +97,8 @@ Lihat contoh jadi: `landing-demo.html` (halaman SaaS utuh) dan `admin-demo.html`
 | `data-modal-target="#id"` | buka modal; tutup via `.modal-x`, klik overlay, atau `Esc` |
 | `data-dd-toggle` di dalam `.dd` | buka/tutup dropdown; klik di luar menutup |
 | `data-tabs` > `[data-tab="x"]` + `[data-tab-panel="x"]` | tab switching |
+| `toast('Pesan', 'success')` | notifikasi kanan-bawah, auto-hilang 4 detik |
+| `[data-carousel]` | carousel: tombol prev/next + dots otomatis |
 
 ## Kustomisasi
 
@@ -126,7 +137,7 @@ ui-kit/
 │   ├── fresh-ui.css   # ENTRY POINT — cukup link file ini (hanya @import)
 │   ├── tokens.css     # design tokens: warna, radius, shadow, font (:root)
 │   ├── base.css       # reset, base typography, layout helpers (.wrap, .grid…)
-│   ├── components.css # komponen UI dasar (button → empty state)
+│   ├── components.css # komponen UI dasar (button → ribbon: 23 section)
 │   ├── landing.css    # komponen landing page (navbar → footer)
 │   └── admin.css      # layout dashboard admin (sidebar → drawer mobile)
 ├── fresh-ui.js        # interaksi: modal/dropdown/tabs/sidebar (~2 KB)

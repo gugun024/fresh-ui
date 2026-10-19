@@ -45,6 +45,14 @@
       e.target.classList.remove('show');
     }
   });
+  // Sidebar treeview: klik parent .side-tree > .side-link buka/tutup submenu
+  document.addEventListener('click', function(e){
+    var st = e.target.closest('.side-tree > .side-link');
+    if (st) {
+      e.preventDefault();
+      st.parentElement.classList.toggle('open');
+    }
+  });
   // Tabs sederhana: [data-tab] + [data-tab-panel="id"]
   document.querySelectorAll('[data-tab]').forEach(function(tab){
     tab.addEventListener('click', function(e){
@@ -58,4 +66,58 @@
       if (panel) panel.style.display = '';
     });
   });
+  // Carousel: [data-carousel] > .car-track > .car-slide + .car-prev/.car-next + .car-dots
+  document.querySelectorAll('[data-carousel]').forEach(function(car){
+    var track = car.querySelector('.car-track');
+    var slides = car.querySelectorAll('.car-slide');
+    var dots = car.querySelectorAll('.car-dots button');
+    if (!track || !slides.length) return;
+    var i = 0;
+    var go = function(n){
+      i = (n + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (i*100) + '%)';
+      dots.forEach(function(d, k){ d.classList.toggle('on', k === i); });
+    };
+    var prev = car.querySelector('.car-prev');
+    var next = car.querySelector('.car-next');
+    if (prev) prev.addEventListener('click', function(){ go(i-1); });
+    if (next) next.addEventListener('click', function(){ go(i+1); });
+    dots.forEach(function(d, k){ d.addEventListener('click', function(){ go(k); }); });
+    go(0);
+  });
+  // Toast helper global: toast('Pesan disimpan', 'success')
+  // tipe: success | warning | danger | info (default info)
+  window.toast = function(msg, type){
+    type = type || 'info';
+    var wrap = document.querySelector('.toast-wrap');
+    if (!wrap) {
+      wrap = document.createElement('div');
+      wrap.className = 'toast-wrap';
+      document.body.appendChild(wrap);
+    }
+    var icons = {success:'✅', warning:'⚠️', danger:'⛔', info:'ℹ️'};
+    var el = document.createElement('div');
+    el.className = 'toast toast-' + type;
+    var tic = document.createElement('span');
+    tic.className = 'tic';
+    tic.textContent = icons[type] || icons.info;
+    var body = document.createElement('div');
+    body.textContent = msg;
+    var x = document.createElement('button');
+    x.className = 'toast-x';
+    x.setAttribute('aria-label', 'Tutup');
+    x.textContent = '×';
+    el.appendChild(tic); el.appendChild(body); el.appendChild(x);
+    wrap.appendChild(el);
+    var killed = false;
+    var kill = function(){
+      if (killed) return;
+      killed = true;
+      el.classList.add('out');
+      setTimeout(function(){ el.remove(); }, 200);
+    };
+    x.addEventListener('click', function(ev){ ev.stopPropagation(); kill(); });
+    el.addEventListener('click', kill);
+    setTimeout(kill, 4000);
+  };
 })();
